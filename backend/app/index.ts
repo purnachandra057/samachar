@@ -1,9 +1,12 @@
-import express from "express";
+import express from 'express'
+import userRouter from '../route/user'
 
-const app = express();
+const app = express()
 
-app.get("/", (_, response) => {
-  response.end("Hello, World!");
-});
+app.get('/', (request, response) => {
+	response.end('Hello, World!')
+})
 
-export default app; 
+app.use('/user', userRouter)
+
+export default app
